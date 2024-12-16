@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster News Updates</title>
+    <link rel="stylesheet" href="newsstyle.css">
+</head>
+<body>
+    <header>
+        <h1>Disaster News Updates</h1>
+    </header>
+    <main>
+        <section class="news-feed">
+            <h2>Latest News</h2>
+            <ul id="news-list">
+                <!-- news items will be rendered here -->
+            </ul>
+        </section>
+        <section class="disaster-info">
+            <h2>Disaster Information</h2>
+            <p id="disaster-name"></p>
+            <p id="disaster-location"></p>
+            <p id="disaster-date"></p>
+            <p id="disaster-description"></p>
+        </section>
+        <section class="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="#" target="_blank">American Red Cross</a></li>
+                <li><a href="#" target="_blank">FEMA</a></li>
+                <li><a href="#" target="_blank">Local Emergency Services</a></li>
+            </ul>
+        </section>
+        <section class="search-bar">
+            <input type="text" id="search-input" placeholder="Search news...">
+            <button id="search-btn">Search</button>
+        </section>
+    </main>
+    <script src="newsscript.js"></script>
+</body>
+</html>

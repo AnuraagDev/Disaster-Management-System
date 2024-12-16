@@ -1,0 +1,171 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#all-numbers">All Numbers</a></li>
+                <li><a href="#add-number">Add Number</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="all-numbers">
+            <h1>All Contact Numbers</h1>
+            <ul id="contact-numbers">
+                <!-- Contact numbers will be displayed here -->
+            </ul>
+        </section>
+        <section id="add-number">
+            <h1>Add New Contact Number</h1>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="number">Number:</label>
+                <input type="tel" id="number" name="number"><br><br>
+                <input type="submit" value="Add Number">
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="tel"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #444;
+}
+
+<!-- script.js -->
+
+// Sample contact numbers data
+const contactNumbers = [
+    { name: "John Doe", number: "123-456-7890" },
+    { name: "Jane Smith", number: "098-765-4321" },
+    { name: "Bob Johnson", number: "555-123-4567" },
+    { name: "Alice Brown", number: "555-901-2345" }
+];
+
+// Display contact numbers
+const contactNumbersList = document.getElementById("contact-numbers");
+contactNumbers.forEach((contact) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${contact.name}: ${contact.number}`;
+    contactNumbersList.appendChild(listItem);
+});
+
+// Add new contact number
+const addNumberForm = document.querySelector("form");
+addNumberForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const number = document.getElementById("number").value;
+    contactNumbers.push({ name, number });
+    const newListItem = document.createElement("li");
+    newListItem.textContent = `${name}: ${number}`;
+    contactNumbersList.appendChild(newListItem);
+    document.getElementById("name").value = "";
+    document.getElementById("number").value = "";
+});
+``
